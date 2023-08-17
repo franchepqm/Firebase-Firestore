@@ -11,6 +11,8 @@ formulario.addEventListener("submit", async function (event) {
     await addDoc(collection(firestore, "Z"), {
       Y: X
     });
+  } catch (error) {
+    console.error("Error al agregar datos", error);
   }
 });
 
