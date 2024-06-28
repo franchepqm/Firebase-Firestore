@@ -37,9 +37,9 @@ async function mostrarDatos() {
         const querySnapshot = await getDocs(collection(firestore, "Z"));
         querySnapshot.forEach((doc) => {
             const dato = doc.data().Y;
-            const itemDiv = document.createElement('div');
-            itemDiv.textContent = dato;
-            listDiv.appendChild(itemDiv);
+            listDiv.innerHTML += `
+                <div>${dato}</div>
+            `;
         });
     } catch (error) {
         console.error("Error al obtener datos", error);
